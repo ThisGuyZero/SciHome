@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% for entries in latest_feed%}
+	<h2><a href={{ entries.link}} >{{ entries.title }}</a></h2>
+	<p>{{ entries.description}}</p>
+{% endfor %}
+{% endblock %}
