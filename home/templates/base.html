@@ -1,23 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="style.css" />
-    <title>{% block title %}SCIome{% endblock %}</title>
-	<h1><center>SCIome</h1>
-</head>
+<div id ="wrap">
+	<head>
+		<div id="header">
+			{% load static %}
+			<link rel="stylesheet" type="text/css" href="{% static 'home/style.css' %}" />
+			<title>{% block title %}SCIome{% endblock %}</title>
+			<h1><center>SCIome</h1>
+		</div>
+	</head>
 
-<body>
-    <div id="sidebar">
-        {% block sidebar %}
-        <ul>
-            <li><a href="/home/">Home</a></li>
-            <li><a href="/blog/">Blog</a></li>
-        </ul>
-        {% endblock %}
-    </div>
+	<body>
+		<div id="nav">
+			<ul>
+			<li><a href="#">Option 1</a></li>
+			<li><a href="#">Option 2</a></li>
+			</ul>
+		</div>
+		
+		<div id="sidebar">
+			{% block sidebar %}
+			<ul>
+				<li><a href="/home/">Home</a></li>
+				<li><a href="/blog/">Blog</a></li>
+			</ul>
+			{% endblock %}
+		</div>
 
-    <div id="content">
-        {% block content %}{% endblock %}
-    </div>
-</body>
+		<div id="main">
+			{% block main %}{% endblock %}
+		</div>
+		
+		<div id="footer">
+			<p>Produced Using Django Python Web Framework by Cody Smith-Cripps</p>
+		</div>
+	</body>
+</div>
 </html>

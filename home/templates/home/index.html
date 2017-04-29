@@ -1,8 +1,11 @@
 {% extends "base.html" %}
 
-{% block content %}
-{% for entries in latest_feed%}
+{% block main %}
+{% for entries in latest_feed.entries%}
 	<h2><a href={{ entries.link}} >{{ entries.title }}</a></h2>
+	<p>{{ entries.published}}</p>
+	<p>{{ entries.author_detail.name}}</p>
+	<img>{{latest_feed.image}}</img>
 	<p>{{ entries.description}}</p>
 {% endfor %}
 {% endblock %}
