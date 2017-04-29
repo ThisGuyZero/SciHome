@@ -7,7 +7,7 @@ from .models import Stories
 
 def index(request):
     template = loader.get_template('home/index.html')
-    latest_feed = Stories.f1.entries
+    latest_feed = Stories.f1
     context = {'latest_feed': latest_feed,}
     return HttpResponse(template.render(context, request))
 
